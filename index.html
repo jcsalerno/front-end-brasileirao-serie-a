@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Brasileirão Série A 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Adicionando FontAwesome para o ícone de cópia -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333333;
+        }
+        .navbar {
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand, .nav-link {
+            color: #333333 !important;
+        }
+        .nav-link:hover {
+            color: #007bff !important;
+        }
+        .section-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef;
+            color: #495057;
+        }
+        .card {
+            border: 1px solid #dee2e6;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .card-title {
+            color: #007bff;
+        }
+        pre {
+            background-color: #e9ecef;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+            overflow-x: auto;
+            color: #333333;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .footer {
+            margin-top: 3rem;
+            padding: 1rem 0;
+            background-color: #ffffff;
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .copy-icon {
+            cursor: pointer;
+            color: #007bff;
+            margin-left: 10px;
+        }
+        .copy-icon:hover {
+            color: #0056b3;
+        }
+        .alert-warning {
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+            color: #856404;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 1rem;
+        }
+        .contact-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .contact-section h2 {
+            color: #007bff;
+            margin-bottom: 1.5rem;
+        }
+        .contact-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">API Brasileirão Série A 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teste.html">Teste Aqui</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da página -->
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Documentação da API Brasileirão Série A 2025</h1>
+
+        <!-- Introdução -->
+        <section class="mb-5">
+            <h2 class="section-title">Introdução</h2>
+            <p>
+                Esta API permite consultar informações sobre jogadores e times do Campeonato Brasileiro Série A 2025.
+                Abaixo estão os endpoints disponíveis, como usá-los e exemplos de requisições e respostas.
+            </p>
+            <p>
+                <strong>URL Base:</strong> <code>http://localhost:8080/api</code>
+            </p>
+            <p>
+                <strong>Observação:</strong> Os IDs dos times estão em ordem alfabética.
+            </p>
+            <!-- Adicionando alerta sobre uso moderado e limitações -->
+            <div class="alert-warning">
+                <p>
+                    <strong>Atenção:</strong> Use esta API com moderação. No momento, nem todos os times estão disponíveis,
+                    e os tratamentos de erro ainda não foram implementados. Isso significa que:
+                </p>
+                <ul>
+                    <li>Alguns times podem não retornar dados.</li>
+                    <li>Requisições inválidas ou erros de servidor podem não ser tratados adequadamente.</li>
+                </ul>
+                <p>
+                    Estamos trabalhando para melhorar a API e trazer mais funcionalidades em breve. Agradecemos a compreensão!
+                </p>
+            </div>
+        </section>
+
+        <!-- Campos Disponíveis -->
+        <section class="mb-5">
+            <h2 class="section-title">Campos Disponíveis</h2>
+            <p>
+                Você pode usar o parâmetro <code>fields</code> para filtrar os campos retornados nas respostas da API.
+                Aqui estão todos os campos disponíveis:
+            </p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Campos de Jogadores</h5>
+                    <ul>
+                        <li><code>id</code>: ID do jogador.</li>
+                        <li><code>nome</code>: Nome do jogador.</li>
+                        <li><code>numero</code>: Número da camisa do jogador.</li>
+                        <li><code>posicao</code>: Posição do jogador (ex: Goleiro, Atacante).</li>
+                        <li><code>aniversario</code>: Data de nascimento do jogador (formato: <code>dd/MM/yyyy</code>).</li>
+                        <li><code>cidade</code>: Cidade de nascimento do jogador.</li>
+                        <li><code>fotoUrl</code>: URL da foto do jogador.</li>
+                        <li><code>nacionalidade</code>: Nacionalidade do jogador.</li>
+                        <li><code>time</code>: Informações sobre o time do jogador (objeto).</li>
+                    </ul>
+                    <h5 class="card-title mt-3">Campos de Times</h5>
+                    <ul>
+                        <li><code>id</code>: ID do time.</li>
+                        <li><code>nome</code>: Nome do time.</li>
+                        <li><code>cidadeSede</code>: Cidade sede do time.</li>
+                        <li><code>estadio</code>: Nome do estádio do time.</li>
+                        <li><code>anoFundacao</code>: Ano de fundação do time.</li>
+                        <li><code>jogadores</code>: Lista de jogadores do time (array de objetos).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Endpoint 1: Buscar jogadores por time -->
+        <section class="endpoint">
+            <h2 class="section-title">1. Buscar jogadores por time</h2>
+            <p>
+                Retorna uma lista de jogadores que pertencem a um time específico.
+            </p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Endpoint</h5>
+                    <code>GET /api/jogadores/time/{timeId}</code>
+                    <h5 class="card-title mt-3">Parâmetros</h5>
+                    <ul>
+                        <li><strong>timeId</strong>: O ID do time (ex: 7 para Flamengo).</li>
+                        <li><strong>fields</strong> (opcional): Lista de campos separados por vírgula para filtrar a resposta (ex: <code>nome,numero,posicao</code>).</li>
+                    </ul>
+                    <h5 class="card-title mt-3">Exemplo de Requisição</h5>
+                    <pre>
+                        <code id="requestExample1">GET /api/jogadores/time/7?fields=nome,numero</code>
+                        <i class="fas fa-copy copy-icon" onclick="copyToClipboard('requestExample1')"></i>
+                    </pre>
+                    <h5 class="card-title mt-3">Exemplo de Resposta</h5>
+                    <pre><code>
+[
+    {
+        "nome": "Gabriel Delfim",
+        "numero": 1
+    },
+    {
+        "nome": "Everson",
+        "numero": 22
+    }
+]
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Endpoint 2: Buscar jogadores por posição -->
+        <section class="endpoint">
+            <h2 class="section-title">2. Buscar jogadores por posição</h2>
+            <p>
+                Retorna uma lista de jogadores que atuam em uma determinada posição.
+            </p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Endpoint</h5>
+                    <code>GET /api/jogadores/posicao/{posicao}</code>
+                    <h5 class="card-title mt-3">Parâmetros</h5>
+                    <ul>
+                        <li><strong>posicao</strong>: A posição dos jogadores (ex: "Goleiro", "Atacante").</li>
+                        <li><strong>fields</strong> (opcional): Lista de campos separados por vírgula para filtrar a resposta (ex: <code>nome,numero</code>).</li>
+                    </ul>
+                    <h5 class="card-title mt-3">Exemplo de Requisição</h5>
+                    <pre>
+                        <code id="requestExample2">GET /api/jogadores/posicao/Goleiro?fields=nome,numero</code>
+                        <i class="fas fa-copy copy-icon" onclick="copyToClipboard('requestExample2')"></i>
+                    </pre>
+                    <h5 class="card-title mt-3">Exemplo de Resposta</h5>
+                    <pre><code>
+[
+    {
+        "nome": "Gabriel Delfim",
+        "numero": 1
+    },
+    {
+        "nome": "Everson",
+        "numero": 22
+    }
+]
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Endpoint 3: Listar todos os times -->
+        <section class="endpoint">
+            <h2 class="section-title">3. Listar todos os times</h2>
+            <p>
+                Retorna uma lista de todos os times cadastrados.
+            </p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Endpoint</h5>
+                    <code>GET /api/times</code>
+                    <h5 class="card-title mt-3">Exemplo de Requisição</h5>
+                    <pre>
+                        <code id="requestExample3">GET /api/times</code>
+                        <i class="fas fa-copy copy-icon" onclick="copyToClipboard('requestExample3')"></i>
+                    </pre>
+                    <h5 class="card-title mt-3">Exemplo de Resposta</h5>
+                    <pre><code>
+[
+    {
+        "id": 7,
+        "nome": "Flamengo",
+        "cidadeSede": "Rio de Janeiro",
+        "estadio": "Maracanã",
+        "anoFundacao": 1895
+    },
+    {
+        "id": 8,
+        "nome": "Fluminense",
+        "cidadeSede": "Rio de Janeiro",
+        "estadio": "Maracanã",
+        "anoFundacao": 1902
+    }
+]
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Endpoint 4: Buscar jogadores por nome do time -->
+        <section class="endpoint">
+            <h2 class="section-title">4. Buscar jogadores por nome do time</h2>
+            <p>
+                Retorna uma lista de jogadores que pertencem a um time específico, buscando pelo nome do time.
+            </p>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Endpoint</h5>
+                    <code>GET /api/times/{nome}/jogadores</code>
+                    <h5 class="card-title mt-3">Parâmetros</h5>
+                    <ul>
+                        <li><strong>nome</strong>: O nome do time (ex: "Flamengo").</li>
+                        <li><strong>fields</strong> (opcional): Lista de campos separados por vírgula para filtrar a resposta (ex: <code>nome,posicao</code>).</li>
+                    </ul>
+                    <h5 class="card-title mt-3">Exemplo de Requisição</h5>
+                    <pre>
+                        <code id="requestExample4">GET /api/times/Flamengo/jogadores?fields=nome,posicao</code>
+                        <i class="fas fa-copy copy-icon" onclick="copyToClipboard('requestExample4')"></i>
+                    </pre>
+                    <h5 class="card-title mt-3">Exemplo de Resposta</h5>
+                    <pre><code>
+[
+    {
+        "nome": "Gabriel Delfim",
+        "posicao": "Goleiro"
+    },
+    {
+        "nome": "Everson",
+        "posicao": "Goleiro"
+    }
+]
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Seção de Contato -->
+        <section class="contact-section">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p>
+                Se você tiver dúvidas, sugestões ou quiser entrar em contato, sinta-se à vontade para me encontrar nas seguintes redes sociais:
+            </p>
+            <ul>
+                <li>
+                    <a href="https://www.linkedin.com/in/juliocesar-developer/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/jcsalerno/" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">©API Brasileirão Série A 2025.</p>
+        </div>
+    </footer>
+
+    <!-- Adicionando Clipboard.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
+    <script>
+        function copyToClipboard(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Texto copiado para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar texto: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

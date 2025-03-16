@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre a API Brasileirão Série A 2025</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Adicionando FontAwesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa; /* Fundo suave */
+            color: #333333; /* Texto preto suave */
+        }
+
+        .navbar {
+            background-color: #ffffff; /* Navbar branca */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        .navbar-brand, .nav-link {
+            color: #333333 !important; /* Texto preto suave */
+        }
+
+        .nav-link:hover {
+            color: #007bff !important; /* Azul vibrante ao passar o mouse */
+        }
+
+        .section-title {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #e9ecef; /* Linha divisória suave */
+            color: #495057; /* Cinza escuro para títulos */
+        }
+
+        .card {
+            border: 1px solid #dee2e6; /* Borda suave */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        .card-title {
+            color: #007bff; /* Azul vibrante para títulos de cards */
+        }
+
+        .footer {
+            margin-top: 3rem;
+            padding: 1rem 0;
+            background-color: #ffffff; /* Fundo branco */
+            text-align: center;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        }
+
+        .contact-section {
+            margin-top: 2rem;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-section h2 {
+            color: #007bff;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-section a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .contact-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">API Brasileirão Série A 2025</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="teste.html">Teste Aqui</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Conteúdo da página -->
+    <div class="container mt-5">
+        <!-- Cabeçalho -->
+        <header class="text-center mb-5">
+            <h1>Sobre a API Brasileirão Série A 2025</h1>
+            <p class="lead">A API que fornece dados sobre times e jogadores do Campeonato Brasileiro Série A.</p>
+        </header>
+
+        <!-- Sobre o Projeto -->
+        <section class="mb-5">
+            <h2 class="section-title">Sobre o Projeto</h2>
+            <p>
+                A <strong>API Brasileirão Série A 2025</strong> foi desenvolvida para fornecer informações detalhadas sobre os times e jogadores que participam do Campeonato Brasileiro Série A.
+                Com ela, você pode acessar dados como posição dos jogadores, times, e muito mais, de forma fácil e organizada.
+            </p>
+            <p>
+                Esta API é ideal para desenvolvedores que desejam integrar dados esportivos em suas aplicações, sejam sites, apps ou sistemas internos.
+            </p>
+            <p>
+                <strong>Nota:</strong> Este projeto é apenas para fins educativos e não tem fins lucrativos.
+            </p>
+        </section>
+
+        <!-- Funcionalidades -->
+        <section class="mb-5">
+            <h2 class="section-title">Funcionalidades</h2>
+            <ul>
+                <li>Consultar jogadores por posição (ex: Goleiro, Atacante).</li>
+                <li>Listar todos os times participantes do Brasileirão Série A 2025.</li>
+                <li>Buscar jogadores de um time específico.</li>
+                <li>Filtrar jogadores por time e posição.</li>
+                <li>Consultar informações detalhadas sobre jogadores, como nome, número, posição, data de nascimento, cidade, foto e nacionalidade.</li>
+                <li>Consultar informações sobre times, como nome, cidade sede, estádio e ano de fundação.</li>
+            </ul>
+        </section>
+
+        <!-- Tecnologias Utilizadas -->
+        <section class="mb-5">
+            <h2 class="section-title">Tecnologias Utilizadas</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Spring Boot</h5>
+                            <p class="card-text">Framework Java para desenvolvimento de APIs RESTful.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">PostgreSQL</h5>
+                            <p class="card-text">Banco de dados relacional utilizado para armazenar os dados da API.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Render</h5>
+                            <p class="card-text">Plataforma de hospedagem onde a API e o banco de dados estão implantados.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Bootstrap</h5>
+                            <p class="card-text">Framework CSS para design responsivo e moderno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section class="contact-section">
+            <h2 class="section-title">Entre em Contato</h2>
+            <p>
+                Se você tiver dúvidas, sugestões ou quiser entrar em contato, sinta-se à vontade para me encontrar nas seguintes redes sociais:
+            </p>
+            <ul>
+                <li>
+                    <a href="https://www.linkedin.com/in/juliocesar-developer/" target="_blank">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/jcsalerno/" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <p class="mb-0">©API Brasileirão Série A 2025.</p>
+        </div>
+    </footer>
+</body>
+</html>
