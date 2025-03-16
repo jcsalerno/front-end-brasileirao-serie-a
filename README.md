@@ -4,6 +4,7 @@ Este projeto é uma interface para consultar e exibir informações sobre jogado
 
 ## 🔗 Link do Projeto
 [Acesse aqui](https://front-end-brasileirao-serie-a.onrender.com/)
+[GitHub do Back-end](https://github.com/jcsalerno/api-brasileirao-a)
 
 ## 📌 Tecnologias Utilizadas
 - HTML5
@@ -23,7 +24,6 @@ Este projeto é uma interface para consultar e exibir informações sobre jogado
  ┣ 📜 index.html  (Página principal)
  ┣ 📜 sobre.html  (Página de informações sobre o projeto)
  ┣ 📜 teste.html  (Área de testes da API)
- ┗ 
 ```
 
 ## 🚀 Como Rodar o Projeto
