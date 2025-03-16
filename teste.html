@@ -100,14 +100,14 @@
     <!-- Menu de Navegação -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="index.html">API Brasileirão Série A 2025</a>
+            <a class="navbar-brand" href="https://front-end-brasileirao-serie-a.onrender.com/">API Brasileirão Série A 2025</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Início</a>
+                        <a class="nav-link" href="https://front-end-brasileirao-serie-a.onrender.com/">Início</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sobre.html">Sobre</a>
@@ -126,7 +126,7 @@
 
         <!-- Campo de entrada e botões -->
         <div class="input-group mb-3">
-            <span class="input-group-text api-url">http://localhost:8080/api/times/</span>
+            <span class="input-group-text api-url">http://https://api-brasileirao-a.onrender.com/api/times/</span>
             <input type="text" id="timeInput" class="form-control" placeholder="Digite o nome do time (exemplo: Flamengo)">
             <div class="btn-group">
                 <button class="btn btn-primary" onclick="buscarTime()">Buscar</button>
@@ -159,14 +159,14 @@
 
             try {
                 // 1. Busca as informações do time
-                const responseTime = await fetch(`http://localhost:8080/api/times/${nomeTime}`);
+                const responseTime = await fetch(`https://api-brasileirao-a.onrender.com/api/times/${nomeTime}`);
                 if (!responseTime.ok) {
                     throw new Error('Time não encontrado.');
                 }
                 const time = await responseTime.json();
 
                 // 2. Busca os jogadores do time
-                const responseJogadores = await fetch(`http://localhost:8080/api/times/${nomeTime}/jogadores`);
+                const responseJogadores = await fetch(`https://api-brasileirao-a.onrender.com/api/times/${nomeTime}/jogadores`);
                 if (!responseJogadores.ok) {
                     throw new Error('Erro ao buscar jogadores.');
                 }
@@ -174,7 +174,7 @@
 
                 // Formata o resultado como JSON
                 const resultadoJSON = {
-                    "Direct link to results": `http://localhost:8080/api/times/${nomeTime}`,
+                    "Direct link to results": `https://api-brasileirao-a.onrender.com/api/times/${nomeTime}`,
                     "time": {
                         "nome": time.nome,
                         "cidadeSede": time.cidadeSede || "Não informado",
