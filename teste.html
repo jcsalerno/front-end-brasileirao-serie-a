@@ -8,29 +8,29 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa; /* Fundo suave */
-            color: #333333; /* Texto preto suave */
+            background-color: #f8f9fa;
+            color: #333333;
         }
 
         .navbar {
-            background-color: #ffffff; /* Navbar branca */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .navbar-brand, .nav-link {
-            color: #333333 !important; /* Texto preto suave */
+            color: #333333 !important;
         }
 
         .nav-link:hover {
-            color: #007bff !important; /* Azul vibrante ao passar o mouse */
+            color: #007bff !important;
         }
 
         .result {
             margin-top: 20px;
             padding: 20px;
-            background-color: #ffffff; /* Fundo branco */
+            background-color: #ffffff;
             border-radius: 8px;
-            border: 1px solid #dee2e6; /* Borda suave */
+            border: 1px solid #dee2e6;
         }
 
         .input-group {
@@ -42,57 +42,57 @@
 
         .api-url {
             font-family: monospace;
-            background-color: #e9ecef; /* Fundo cinza claro */
-            padding: 8px;
+            background-color: #e9ecef;
+            padding: 10px;
             border-radius: 4px;
-            border: 1px solid #dee2e6; /* Borda suave */
+            border: 1px solid #dee2e6;
             white-space: nowrap;
             font-size: 0.9em;
-            height: 100%;
+            height: 40px; /* Altura fixa para corresponder ao input */
             display: flex;
             align-items: center;
         }
 
         .form-control {
-            height: 100%;
+            height: 40px; /* Altura fixa */
             font-size: 1em;
             padding: 10px;
-            border: 1px solid #dee2e6; /* Borda suave */
+            border: 1px solid #dee2e6;
+            flex-grow: 1; /* Ocupa o espaço restante horizontalmente */
+            min-width: 500px; /* Largura mínima aumentada para exibir o placeholder completo */
         }
 
-        .btn-primary {
-            background-color: #0d6efd; /* Azul suave para botões */
-            border-color: #0d6efd;
+        .btn-group {
+            margin-left: 10px; /* Espaço entre o input e os botões */
         }
 
-        .btn-primary:hover {
-            background-color: #0b5ed7; /* Azul mais escuro ao passar o mouse */
-        }
-
-        .btn-secondary {
-            background-color: #6c757d; /* Cinza para botões secundários */
-            border-color: #6c757d;
-        }
-
-        .btn-secondary:hover {
-            background-color: #5a6268; /* Cinza mais escuro ao passar o mouse */
+        .btn-primary, .btn-secondary {
+            padding: 8px 16px; /* Botões mais compactos */
         }
 
         pre {
-            background-color: #e9ecef; /* Fundo cinza claro */
+            background-color: #e9ecef;
             padding: 10px;
             border-radius: 4px;
-            border: 1px solid #dee2e6; /* Borda suave */
+            border: 1px solid #dee2e6;
             overflow-x: auto;
-            color: #333333; /* Texto preto suave */
+            color: #333333;
         }
 
         .footer {
             margin-top: 3rem;
             padding: 1rem 0;
-            background-color: #ffffff; /* Fundo branco */
+            background-color: #ffffff;
             text-align: center;
-            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .placeholder-large::placeholder {
+            font-size: 1em; /* Tamanho do placeholder padrão */
+            color: #666;
+            white-space: nowrap; /* Impede que o placeholder quebre em várias linhas */
+            overflow: hidden; /* Esconde o texto que ultrapassar */
+            text-overflow: ellipsis; /* Adiciona "..." se o texto for muito longo */
         }
     </style>
 </head>
@@ -127,7 +127,7 @@
         <!-- Campo de entrada e botões -->
         <div class="input-group mb-3">
             <span class="input-group-text api-url">https://api-brasileirao-a.onrender.com/api/times/</span>
-            <input type="text" id="timeInput" class="form-control" placeholder="Digite o nome do time">
+            <input type="text" id="timeInput" class="form-control placeholder-large" placeholder="Digite o nome do time">
             <div class="btn-group">
                 <button class="btn btn-primary" onclick="buscarTime()">Buscar</button>
                 <button class="btn btn-secondary" onclick="limparCampos()">Limpar</button>
@@ -140,7 +140,6 @@
             <pre id="jsonResult"></pre>
         </div>
     </div>
-    
 
     <!-- Rodapé -->
     <footer class="footer">
@@ -187,7 +186,7 @@
                         "posicao": jogador.posicao,
                         "nacionalidade": jogador.nacionalidade,
                         "cidade": jogador.cidade || "Não informado",
-                        "aniversario": jogador.aniversario ? new Date(jogador.aniversario).toLocaleDateString('pt-BR') : "Não informado"
+                        "aniversario": jogador.aniversario || "Não informado" // Já vem formatado do backend
                     }))
                 };
 
